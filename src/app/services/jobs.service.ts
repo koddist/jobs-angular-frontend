@@ -20,10 +20,6 @@ export class JobsService {
 
   constructor( private http: HttpClient) { }
 
-  // searchJobs(params: any): Promise<Job[]> {
-  //   return this.http.get<Job[]>(`${this.hostName}/jobs`, { params }).toPromise();
-  // }
-
   getCompanies(): Promise<Company[]> {
     const response = this.http.get<Company[]>(`${this.hostName}/companies`, {}).toPromise();
     response.then(res => this.companiesData.next(res));
@@ -46,7 +42,7 @@ export class JobsService {
     Object.keys(params).forEach(param => {
       if (typeof params[param] !== 'number' && params[param]?.length < 1) {
         delete params[param];
-      } else if (Object.keys(params).every(p => params[param] === null)) {
+      } else if (Object.keys(params).every(() => params[param] === null)) {
         delete params[param];
       }
     });
