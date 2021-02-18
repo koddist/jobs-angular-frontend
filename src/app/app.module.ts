@@ -17,6 +17,15 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { JobsService } from './services/jobs.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { NamePipe } from './pipes/name.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +33,8 @@ import { SearchComponent } from './search/search.component';
     NavComponent,
     DashboardComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    NamePipe
   ],
   imports: [
     BrowserModule,
@@ -39,8 +49,17 @@ import { SearchComponent } from './search/search.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    HttpClientModule,
+    MatExpansionModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+  ],
+  providers: [ JobsService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

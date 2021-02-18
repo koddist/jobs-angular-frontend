@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "jobs247-app"
+  "defaultProject": "jobs247-app",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,12 @@
+.container {
+  padding: 1rem;
+  .filter-form {
+    display: flex;
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .job-item-icon {
+    margin-right: 0.5rem;
+    color: #b5b5b5;
+  }
+}

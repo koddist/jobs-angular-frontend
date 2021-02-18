@@ -1,5 +1,35 @@
-<p class="mat-body-2">Find a job</p>
-<form>
-
-</form>
-<mat-divider></mat-divider>
+<div class="container">
+  <p class="mat-h3">Find a job</p>
+  <form class="filter-form" [formGroup]="filterForm">
+    <mat-form-field>
+      <mat-label>Company</mat-label>
+      <mat-select formControlName="companyId">
+        <mat-option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Position</mat-label>
+      <mat-select formControlName="positionId">
+        <mat-option *ngFor="let position of positions" [value]="position.id">{{ position.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Search keyword</mat-label>
+      <input matInput formControlName="search">
+    </mat-form-field>
+    <button (click)="resetFilter()" mat-mini-fab color="warn" [disabled]="filterForm.pristine">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </form>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let job of jobs">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon class="job-item-icon">business</mat-icon>{{ companies | findName: jobs : job.companyId }}
+        </mat-panel-title>
+        <mat-panel-description><mat-icon class="job-item-icon">badge</mat-icon>{{ positions | findName: jobs : job.positionId }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{ job.description }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
