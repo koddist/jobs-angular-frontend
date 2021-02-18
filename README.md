@@ -3,6 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
 ## Todos
+
+### Create a new development branch
+- branch should be named dev-your-name
+- features should be implemented in feature branches feat/name-of-feature
+- merge the features into your dev branch when they are completed  
+
 ### Add a service for querying the jobs 24/7 webservice
 Endpoints:
 - get positions from http://localhost:3030/positions
