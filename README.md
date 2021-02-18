@@ -45,6 +45,8 @@ Implement a search results component
   a row should contain postition, company and description of the job
 - use rxjs for combining data for jobs, companies and postitions from data store
 
+- see search.jpg
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
